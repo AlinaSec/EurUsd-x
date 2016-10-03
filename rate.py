@@ -12,11 +12,9 @@ def main():
                 'Accept-Encoding':'gzip, deflate',
                 'Connection':'keep-alive'
                 }
-
     url='http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20%28%22EURUSD%22%29&env=store://datatables.org/alltableswithkeys'
     old_rate=''
-    while True:
-    
+    while True:    
         try:
             r = requests.get(url,headers=headers)
             content=r.content
@@ -27,12 +25,9 @@ def main():
             time.sleep(15)
             old_rate=rate[0]
         except Exception as e:
-            # print e
+            #print e
             time.sleep(10)
-        pass
-            
-    
-    
+        pass    
 if __name__ == "__main__":
     os.system('color b')
     main()
