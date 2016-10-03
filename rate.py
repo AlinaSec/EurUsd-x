@@ -15,7 +15,7 @@ def main():
 
     url='http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20%28%22EURUSD%22%29&env=store://datatables.org/alltableswithkeys'
     old_rate=''
-    while 1==1:
+    while True:
     
         try:
             r = requests.get(url,headers=headers)
